@@ -1,4 +1,4 @@
-var candlejs = null || {};
+var candlejs = {};
 
 candlejs.sprite = function(spriteSheet, line, nFrames, xOrigin, yOrigin) {
 	this.spriteSheet = spriteSheet;

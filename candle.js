@@ -8,12 +8,12 @@ candlejs.sprite = function(spriteSheet, line, nFrames, xOrigin, yOrigin) {
 	this.yOrigin = yOrigin || 0;
 }
 
-candlejs.spriteSheet = function(strip, imageWidth, imageHeight, xSep, ySep, xOffset, yOffset) {
+candlejs.spriteSheet = function(strip, imageWidth, imageHeight, xSeparation, ySeparation, xOffset, yOffset) {
 	this.strip = strip;
 	this.imageWidth = imageWidth;
 	this.imageHeight = imageHeight;
-	this.xSep = xSep || 0;
-	this.ySep = ySep || 0;
+	this.xSeparation = xSeparation || 0;
+	this.ySeparation = ySeparation || 0;
 	this.xOffset = xOffset || 0;
 	this.yOffset = yOffset || 0;
 }

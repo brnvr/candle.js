@@ -368,7 +368,7 @@ candlejs.drawSprite = function(ctx, spriteIndex, position, imageIndex, depth) {
 }
 
 candlejs.keyboard = {
-	activate: function() {
+	use: function() {
 		window.addEventListener("keydown", function(event) {
 			if (candlejs.keyboard.keysDown[event.code] != candlejs.inputState.pressed &&
 				candlejs.keyboard.keysDown[event.code] != candlejs.inputState.onhold) {
@@ -417,7 +417,7 @@ candlejs.keyboard = {
 }
 
 candlejs.mouse = {
-	activate: function(canvas) {
+	use: function(canvas) {
 		canvas.addEventListener("mousedown", function(event) {
 			if (candlejs.mouse.buttonsDown[event.button] != candlejs.inputState.pressed &&
 				candlejs.mouse.buttonsDown[event.button] != candlejs.inputState.onhold) {
@@ -480,8 +480,8 @@ candlejs.mouse = {
 
 	buttonsDown: [],
 	buttonsPressed: [],
-	buttonsReleased: []
-	canvasToMouseProportion = {x: 1, y: 1};
+	buttonsReleased: [],
+	canvasToMouseProportion: {x: 1, y: 1}
 }
 
 candlejs.inputState = {

@@ -437,8 +437,8 @@ candlejs.mouse = {
 		canvas.addEventListener("mousemove", function(event) {
 			let rect = canvas.getBoundingClientRect();
 
-			candlejs.mouse.position.x = (event.clientX - rect.left)*candlejs.canvasToMouseProportion.x;
-			candlejs.mouse.position.y = (event.clientY - rect.top)*candlejs.canvasToMouseProportion.y;
+			candlejs.mouse.position.x = (event.clientX - rect.left)*candlejs.mouse.canvasToMouseProportion.x;
+			candlejs.mouse.position.y = (event.clientY - rect.top)*candlejs.mouse.canvasToMouseProportion.y;
 		});
 	},
 
@@ -481,6 +481,7 @@ candlejs.mouse = {
 	buttonsDown: [],
 	buttonsPressed: [],
 	buttonsReleased: []
+	canvasToMouseProportion = {x: 1, y: 1};
 }
 
 candlejs.inputState = {
@@ -741,9 +742,8 @@ candlejs.scaleCanvas = function(canvas, xScale, yScale, crispy = false) {
 
 	canvas.style.width = (canvas.width*xScale).toString() + "px";
 	canvas.style.height = (canvas.height*yScale).toString() + "px";
-	candlejs.canvasToMouseProportion = {x: 1/xScale, y: 1/yScale};
+	candlejs.mouse.canvasToMouseProportion = {x: 1/xScale, y: 1/yScale};
 }
 
 candlejs.camera = {position: {x: 0, y: 0}, follow: {actor: undefined, limit: {left: 0, right: 0, top: 0, bottom: 0}}};
-candlejs.canvasToMouseProportion = {x: 1, y: 1};
 candlejs.pixelsToMeter = 32;
